@@ -1,0 +1,19 @@
+{
+  "name": "farmies",
+  "version": "0.0.1",
+  "description": "find some fresh and local food",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandreaco/farmies.git"
+  },
+  "author": "alexandrea defreitas @_alexdef",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandreaco/farmies/issues"
+  },
+  "homepage": "https://github.com/alexandreaco/farmies#readme"
+}
