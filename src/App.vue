@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <hello></hello>
-  </div>
+     <h1>Farmies</h1>
+     <ul>
+       <li><router-link to="/">Home</router-link></li>
+       <li><router-link to="/map">Map View</router-link></li>
+       <li><router-link to="/list">List view</router-link></li>
+     </ul>
+     <router-view class="view"></router-view>
+   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
 
 export default {
   name: 'app',
-  components: {
-    Hello,
-  },
 };
 </script>
 
