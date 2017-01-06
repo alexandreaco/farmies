@@ -1,11 +1,14 @@
 <template>
   <div class="home">
     <h2>{{ msg }}</h2>
-    <select v-model="selected">
-      <option v-for="state in states" v-bind:value="state">
-        {{ state }}
-      </option>
-    </select>
+    <form v-on:submit.prevent="selectState">
+      <select v-model="selected">
+        <option v-for="state in states" v-bind:value="state">
+          {{ state }}
+        </option>
+      </select>
+      <input type="submit" />
+    </form>
     <h4>or, use my location</h4>
     <p>You chose {{ selected }}</p>
   </div>
@@ -26,6 +29,13 @@ export default {
         'New York',
       ],
     };
+  },
+  /* eslint-disable func-names */
+  methods: {
+    selectState() {
+      const locationId = this.selected.replace(/ /g, '-').toLowerCase();
+      this.$router.push({ path: `/farms/${locationId}/map` });
+    },
   },
 };
 

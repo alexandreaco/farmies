@@ -1,6 +1,7 @@
 <template>
   <div class="map">
     <h2>Map</h2>
+    <p>Showing farms (map) in {{ $route && $route.params.id }}</p>
   </div>
 </template>
 

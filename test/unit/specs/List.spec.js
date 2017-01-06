@@ -7,7 +7,7 @@ describe('List.vue', () => {
       el: document.createElement('div'),
       render: (h) => h(List),
     });
-    expect(vm.$el.querySelector('.list h2').textContent)
-      .to.equal('List');
+    expect(vm.$el.querySelector('.list p').textContent)
+      .to.contain('Showing farms (list)');
   });
 });

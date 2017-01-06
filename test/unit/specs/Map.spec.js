@@ -7,7 +7,7 @@ describe('Map.vue', () => {
       el: document.createElement('div'),
       render: (h) => h(Map),
     });
-    expect(vm.$el.querySelector('.map h2').textContent)
-      .to.equal('Map');
+    expect(vm.$el.querySelector('.map p').textContent)
+      .to.contain('Showing farms (map)');
   });
 });

@@ -1,11 +1,7 @@
 <template>
   <div id="app">
-     <h1>Farmies</h1>
-     <ul>
-       <li><router-link to="/">Home</router-link></li>
-       <li><router-link to="/map">Map View</router-link></li>
-       <li><router-link to="/list">List view</router-link></li>
-     </ul>
+     <router-link to="/"><h1>Farmies</h1></router-link>
+
      <router-view class="view"></router-view>
    </div>
 </template>

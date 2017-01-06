@@ -6,14 +6,26 @@ import App from './App';
 import Home from './components/Home';
 import Map from './components/Map';
 import List from './components/List';
+import Farms from './components/Farms';
 
 Vue.use(VueRouter);
 
 // Routes
 const routes = [
   { path: '/', component: Home },
-  { path: '/map', component: Map },
-  { path: '/list', component: List },
+  { path: '/farms/:id',
+    component: Farms,
+    children: [
+      {
+        path: 'map',
+        component: Map,
+      },
+      {
+        path: 'list',
+        component: List,
+      },
+    ],
+  },
 ];
 
 // Router

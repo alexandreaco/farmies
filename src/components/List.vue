@@ -1,6 +1,7 @@
 <template>
   <div class="list">
     <h2>List</h2>
+    <p>Showing farms (list) in {{ $route && $route.params.id }}</p>
   </div>
 </template>
 
