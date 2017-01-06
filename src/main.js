@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Map from './components/Map';
 import List from './components/List';
 import Farms from './components/Farms';
+import PageNotFound from './components/PageNotFound';
 
 Vue.use(VueRouter);
 
@@ -26,10 +27,12 @@ const routes = [
       },
     ],
   },
+  { path: '*', component: PageNotFound },
 ];
 
 // Router
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 
