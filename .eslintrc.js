@@ -20,10 +20,12 @@ module.exports = {
   // add your custom rules here
   'rules': {
     // don't require .vue extension when importing
-    'import/extensions': ['error', 'always', {
+    'import/extensions': ['error', 'never', {
       'js': 'never',
       'vue': 'never'
     }],
+    // don't check if files can be resolved. webpack already does this
+    'import/no-unresolved': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
