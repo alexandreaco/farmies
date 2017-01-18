@@ -1,11 +1,13 @@
 <template>
   <div class="farms">
-    <div class="title">
-      <h2>Showing farms in {{ state }}</h2>
-      <ul class="toggle">
-        <li><router-link to="map">Map</router-link></li>
-        <li><router-link to="list">List</router-link></li>
-      </ul>
+    <div class="header">
+      <div class="title">
+        <h2>Showing farms in {{ state }}</h2>
+        <ul class="toggle">
+          <li><router-link to="map">Map</router-link></li>
+          <li><router-link to="list">List</router-link></li>
+        </ul>
+      </div>
     </div>
     <router-view></router-view>
   </div>
@@ -27,6 +29,15 @@ export default {
 <style scoped>
 .farms {
   margin-top: 20px;
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .title {

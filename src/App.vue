@@ -27,11 +27,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin: 0 auto;
-  max-width: 900px;
 }
 
 header {
+  max-width: 900px;
+  margin: 0 auto;
   border-bottom: 1px solid #ddd;
   padding: 10px 5px;
   text-align: right;
@@ -40,5 +40,10 @@ header {
 h1 {
   font-size: 14px;
   margin: 0 10px;
+}
+
+/* temp: override default leaflet controlls position */
+.leaflet-top {
+  top: 200px;
 }
 </style>
