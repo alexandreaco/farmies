@@ -6,7 +6,8 @@ describe('Map.vue', () => {
     const vm = new Vue({
       el: document.createElement('div'),
       render: (h) => h(Map),
-    });
+    }).$mount();
+
     expect(vm.$el.querySelector('.map p').textContent)
       .to.contain('Showing farms (map)');
   });
