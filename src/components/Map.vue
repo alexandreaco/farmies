@@ -3,7 +3,8 @@
     <div class="canvas">
       <div id="mapArea"></div>
     </div>
-    <button class="button" v-on:click="getData">Get Data</button>
+    <!-- For Debugging -->
+    <!-- <button class="button" v-on:click="getData">Get Data</button> -->
   </div>
 </template>
 
@@ -25,12 +26,15 @@ export default {
     });
   },
   methods: {
-    getData() {
-      console.log('-----');
-      console.log(this.getCenter());
-      console.log(this.getZoom());
-      console.log('-----');
-    },
+  // ---
+  // For Debugging
+  //
+  // getData() {
+  //   console.log('-----');
+  //   console.log(this.getCenter());
+  //   console.log(this.getZoom());
+  //   console.log('-----');
+  // },
   },
 };
 

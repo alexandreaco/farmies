@@ -27,12 +27,14 @@ export default {
     };
   },
   created() {
-    // Get data
-    const stateData = this.getData(this.$route.params.id);
-    // Store it in props to send to children
-    this.name = stateData.name;
-    this.center = stateData.center;
-    this.zoom = stateData.zoom;
+    if (this.$route) {
+      // Get data
+      const stateData = this.getData(this.$route.params.id);
+      // Store it in props to send to children
+      this.name = stateData.name;
+      this.center = stateData.center;
+      this.zoom = stateData.zoom;
+    }
   },
 };
 
