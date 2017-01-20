@@ -14,7 +14,7 @@ import { mapMixins } from '../mixins/map.mixins';
 export default {
   name: 'map',
   mixins: [mapMixins],
-  props: ['stateName', 'center', 'zoom'],
+  props: ['farms', 'center', 'zoom'],
   data() {
     return {};
   },
@@ -23,6 +23,10 @@ export default {
       id: 'mapArea',
       center: this.center,
       zoom: this.zoom,
+    })
+    .then(() => {
+      // temp hack to wait until farms has been initialized
+      setTimeout(() => { this.addMarkers(this.farms); }, 500);
     });
   },
   methods: {
