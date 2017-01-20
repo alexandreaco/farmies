@@ -1,23 +1,40 @@
 <template>
   <div class="farms">
-    <div class="title">
-      <h2>Showing farms in {{ state }}</h2>
-      <ul class="toggle">
-        <li><router-link to="map">Map</router-link></li>
-        <li><router-link to="list">List</router-link></li>
-      </ul>
+    <div class="header">
+      <div class="title">
+        <h2>Showing farms in {{ name }}</h2>
+        <ul class="toggle">
+          <li><router-link to="map">Map</router-link></li>
+          <li><router-link to="list">List</router-link></li>
+        </ul>
+      </div>
     </div>
-    <router-view></router-view>
+    <router-view :state-name="name" :center="center" :zoom="zoom"></router-view>
   </div>
 </template>
 
 <script>
+import { stateMixins } from '../mixins/state.mixins';
+
 export default {
   name: 'farms',
+  mixins: [stateMixins],
   data() {
     return {
-      state: 'Rhode Island',
+      name: 'Rhode Island',
+      center: [38.78, -101.33],
+      zoom: 4,
     };
+  },
+  created() {
+    if (this.$route) {
+      // Get data
+      const stateData = this.getData(this.$route.params.id);
+      // Store it in props to send to children
+      this.name = stateData.name;
+      this.center = stateData.center;
+      this.zoom = stateData.zoom;
+    }
   },
 };
 
@@ -26,7 +43,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .farms {
-  margin-top: 20px;
+  position: relative;
+}
+
+.header {
+  background-color: rgba(255,255,255,0.33);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .title {

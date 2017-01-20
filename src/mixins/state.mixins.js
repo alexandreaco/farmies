@@ -1,0 +1,313 @@
+// in the future we'll get this from an api or something
+const stateData = [
+  {
+    id: 'alabama',
+    name: 'Alabama',
+    center: [32.72721987021932, -86.49536132812501],
+    zoom: 7,
+  },
+  {
+    id: 'alaska',
+    name: 'Alaska',
+    center: [64.83959712503844, -152.49023437500003],
+    zoom: 5,
+  },
+  {
+    id: 'arizona',
+    name: 'Arizona',
+    center: [34.347971491244984, -111.67602539062501],
+    zoom: 7,
+  },
+  {
+    id: 'arkansas',
+    name: 'Arkansas',
+    center: [34.52918706954935, -92.31811523437501],
+    zoom: 7,
+  },
+  {
+    id: 'california',
+    name: 'California',
+    center: [37.65773212628274, -119.11376953125001],
+    zoom: 6,
+  },
+  {
+    id: 'colorado',
+    name: 'Colorado',
+    center: [39.031986028740086, -105.43579101562501],
+    zoom: 7,
+  },
+  {
+    id: 'connecticut',
+    name: 'Connecticut',
+    center: [41.624681950391334, -72.75695800781251],
+    zoom: 9,
+  },
+  {
+    id: 'delaware',
+    name: 'Delaware',
+    center: [39.07570985562645, -75.42388916015626],
+    zoom: 9,
+  },
+  {
+    id: 'florida',
+    name: 'Florida',
+    center: [28.125283321961756, -83.45214843750001],
+    zoom: 7,
+  },
+  {
+    id: 'georgia',
+    name: 'Georgia',
+    center: [32.1570124860701, -83.58398437500001],
+    zoom: 7,
+  },
+  {
+    id: 'hawaii',
+    name: 'Hawaii',
+    center: [20.607077970830293, -157.44506835937503],
+    zoom: 8,
+  },
+  {
+    id: 'idaho',
+    name: 'Idaho',
+    center: [45.55252525134013, -115.31250000000001],
+    zoom: 6,
+  },
+  {
+    id: 'illinois',
+    name: 'Illinois',
+    center: [39.918162846609455, -89.110107421875],
+    zoom: 7,
+  },
+  {
+    id: 'indiana',
+    name: 'Indiana',
+    center: [39.605688178320804, -86.46240234375001],
+    zoom: 7,
+  },
+  {
+    id: 'iowa',
+    name: 'Iowa',
+    center: [41.934976500546604, -93.77929687500001],
+    zoom: 7,
+  },
+  {
+    id: 'kansas',
+    name: 'Kansas',
+    center: [38.40194908237825, -98.76708984375001],
+    zoom: 7,
+  },
+  {
+    id: 'kentucky',
+    name: 'Kentucky',
+    center: [37.46613860234406, -85.38574218750001],
+    zoom: 7,
+  },
+  {
+    id: 'louisiana',
+    name: 'Louisiana',
+    center: [31.23159167205059, -92.47192382812501],
+    zoom: 7,
+  },
+  {
+    id: 'maine',
+    name: 'Maine',
+    center: [45.336701909968134, -69.39514160156251],
+    zoom: 7,
+  },
+  {
+    id: 'maryland',
+    name: 'Maryland',
+    center: [38.60828592850559, -77.37670898437501],
+    zoom: 8,
+  },
+  {
+    id: 'massachusetts',
+    name: 'Massachusetts',
+    center: [42.17154633452754, -71.99890136718751],
+    zoom: 8,
+  },
+  {
+    id: 'michigan',
+    name: 'Michigan',
+    center: [43.81867485545323, -85.97900390625001],
+    zoom: 6,
+  },
+  {
+    id: 'minnesota',
+    name: 'Minnesota',
+    center: [46.27863122156088, -94.57031250000001],
+    zoom: 7,
+  },
+  {
+    id: 'mississippi',
+    name: 'Mississippi',
+    center: [32.41706632846282, -89.90112304687501],
+    zoom: 7,
+  },
+  {
+    id: 'missouri',
+    name: 'Missouri',
+    center: [38.46219172306828, -92.779541015625],
+    zoom: 7,
+  },
+  {
+    id: 'montana',
+    name: 'Montana',
+    center: [46.807579571992385, -109.85229492187501],
+    zoom: 7,
+  },
+  {
+    id: 'nebraska',
+    name: 'Nebraska',
+    center: [41.47566020027821, -99.78881835937501],
+    zoom: 7,
+  },
+  {
+    id: 'nevada',
+    name: 'Nevada',
+    center: [37.70120736474139, -117.20214843750001],
+    zoom: 6,
+  },
+  {
+    id: 'new-hampshire',
+    name: 'New Hampshire',
+    center: [43.89789239125797, -71.43859863281251],
+    zoom: 8,
+  },
+  {
+    id: 'new-jersey',
+    name: 'New Jersey',
+    center: [40.17467622056341, -74.64660644531251],
+    zoom: 8,
+  },
+  {
+    id: 'new-mexico',
+    name: 'New Mexico',
+    center: [34.17999758688084, -106.50146484375],
+    zoom: 7,
+  },
+  {
+    id: 'new-york',
+    name: 'New York',
+    center: [43.04480541304369, -74.86633300781251],
+    zoom: 7,
+  },
+  {
+    id: 'north-carolina',
+    name: 'North Carolina',
+    center: [35.003003395276714, -79.69482421875],
+    zoom: 7,
+  },
+  {
+    id: 'north-dakota',
+    name: 'North Dakota',
+    center: [47.12247581664114, -100.28320312500001],
+    zoom: 7,
+  },
+  {
+    id: 'ohio',
+    name: 'Ohio',
+    center: [39.95185892663005, -82.82592773437501],
+    zoom: 7,
+  },
+  {
+    id: 'oklahoma',
+    name: 'Oklahoma',
+    center: [34.92197103616377, -98.21777343750001],
+    zoom: 7,
+  },
+  {
+    id: 'oregon',
+    name: 'Oregon',
+    center: [43.97700467496408, -120.66284179687501],
+    zoom: 7,
+  },
+  {
+    id: 'pennsylvania',
+    name: 'Pennsylvania',
+    center: [40.896905775860006, -77.49755859375001],
+    zoom: 8,
+  },
+  {
+    id: 'rhode-island',
+    name: 'Rhode Island',
+    center: [41.68214320725652, -71.53335571289064],
+    zoom: 10,
+  },
+  {
+    id: 'south-carolina',
+    name: 'South Carolina',
+    center: [33.61461929233378, -80.80993652343751],
+    zoom: 8,
+  },
+  {
+    id: 'south-dakota',
+    name: 'South Dakota',
+    center: [44.15856343854312, -100.20629882812501],
+    zoom: 7,
+  },
+  {
+    id: 'tennessee',
+    name: 'Tennessee',
+    center: [35.263561862152095, -86.033935546875],
+    zoom: 7,
+  },
+  {
+    id: 'texas',
+    name: 'Texas',
+    center: [31.484893386890164, -99.27246093750001],
+    zoom: 6,
+  },
+  {
+    id: 'utah',
+    name: 'Utah',
+    center: [39.17265867042997, -111.84082031250001],
+    zoom: 7,
+  },
+  {
+    id: 'vermont',
+    name: 'Vermont',
+    center: [43.77902662160831, -72.45483398437501],
+    zoom: 8,
+  },
+  {
+    id: 'virginia',
+    name: 'Virginia',
+    center: [37.405073750176925, -79.78271484375001],
+    zoom: 7,
+  },
+  {
+    id: 'washington',
+    name: 'Washington',
+    center: [47.37603463349758, -120.23437500000001],
+    zoom: 7,
+  },
+  {
+    id: 'west-virginia',
+    name: 'West Virginia',
+    center: [38.56105262446978, -80.63964843750001],
+    zoom: 8,
+  },
+  {
+    id: 'wisconsin',
+    name: 'Wisconsin',
+    center: [44.512176171071054, -89.82421875000001],
+    zoom: 7,
+  },
+  {
+    id: 'wyoming',
+    name: 'Wyoming',
+    center: [42.755079545072135, -107.81982421875],
+    zoom: 7,
+  },
+];
+
+export const stateMixins = {
+  methods: {
+    getData(id) {
+      return stateData.find(state => state.id === id);
+    },
+  },
+};
+
+export default stateMixins;
