@@ -18,15 +18,16 @@ export default {
   data() {
     return {};
   },
+  watch: {
+    farms() {
+      if (this.isInitialized()) this.addMarkers(this.farms);
+    },
+  },
   mounted() {
     this.initMap({
       id: 'mapArea',
       center: this.center,
       zoom: this.zoom,
-    })
-    .then(() => {
-      // temp hack to wait until farms has been initialized
-      setTimeout(() => { this.addMarkers(this.farms); }, 500);
     });
   },
   methods: {
