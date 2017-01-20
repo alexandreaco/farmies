@@ -9,21 +9,23 @@
         </ul>
       </div>
     </div>
-    <router-view :state-name="name" :center="center" :zoom="zoom"></router-view>
+    <router-view :state-name="name" :center="center" :zoom="zoom" :farms="farms"></router-view>
   </div>
 </template>
 
 <script>
 import { stateMixins } from '../mixins/state.mixins';
+import { apiMixins } from '../mixins/api.mixins';
 
 export default {
   name: 'farms',
-  mixins: [stateMixins],
+  mixins: [stateMixins, apiMixins],
   data() {
     return {
       name: 'Rhode Island',
       center: [38.78, -101.33],
       zoom: 4,
+      farms: [],
     };
   },
   created() {
@@ -34,6 +36,9 @@ export default {
       this.name = stateData.name;
       this.center = stateData.center;
       this.zoom = stateData.zoom;
+      // Get farms and store data
+      this.getFarmsByState(this.$route.params.id)
+      .then((res) => { this.farms = res; });
     }
   },
 };
