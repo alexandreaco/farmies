@@ -1,0 +1,10 @@
+{
+ "name": "farmies",
+ "version": "1.0.0",
+ "description": "find some fresh and local food",
+ "author": "alexandrea defreitas @_alexdef",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+ }
+}
