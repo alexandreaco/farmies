@@ -3,6 +3,8 @@
     <div class="canvas">
       <div id="mapArea"></div>
     </div>
+    <farm v-if="showModal" :data="farmData"></farm>
+    <div v-if="showModal" v-on:click="closeModal" class="overlay"></div>
     <!-- For Debugging -->
     <!-- <button class="button" v-on:click="getData">Get Data</button> -->
   </div>
@@ -10,13 +12,25 @@
 
 <script>
 import { mapMixins } from '../mixins/map.mixins';
+import Farm from './Farm';
 
 export default {
   name: 'map',
   mixins: [mapMixins],
-  props: ['stateName', 'center', 'zoom'],
+  props: ['farms', 'center', 'zoom'],
+  components: {
+    farm: Farm,
+  },
   data() {
-    return {};
+    return {
+      farmData: {},
+      showModal: false,
+    };
+  },
+  watch: {
+    farms() {
+      if (this.isInitialized()) this.addMarkers(this.farms);
+    },
   },
   mounted() {
     this.initMap({
@@ -26,6 +40,9 @@ export default {
     });
   },
   methods: {
+    closeModal() {
+      this.showModal = false;
+    },
   // ---
   // For Debugging
   //
@@ -67,5 +84,13 @@ export default {
   position: absolute;
   z-index: 2;
   bottom: -100px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
 }
 </style>

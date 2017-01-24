@@ -24,6 +24,19 @@ export const mapMixins = {
       }
     },
 
+    addMarkers(markers) {
+      markers.forEach((marker) => {
+        L.marker([marker.y, marker.x]).on('click', () => {
+          this.farmData = marker;
+          this.showModal = true;
+        }).addTo(MAP);
+      });
+    },
+
+    isInitialized() {
+      return typeof MAP.boxZoom === 'object';
+    },
+
     getCenter() {
       return MAP.getCenter();
     },
