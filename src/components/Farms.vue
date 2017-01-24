@@ -9,7 +9,9 @@
         </ul>
       </div>
     </div>
-    <router-view :state-name="name" :center="center" :zoom="zoom" :farms="farms"></router-view>
+    <keep-alive>
+      <router-view :state-name="name" :center="center" :zoom="zoom" :farms="farms"></router-view>
+    </keep-alive>
   </div>
 </template>
 
